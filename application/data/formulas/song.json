@@ -1,0 +1,6 @@
+[
+  {"name":"Tốc độ sóng","slug":"toc-do-song","latex":"v = f\\lambda"},
+  {"name":"Phương trình sóng","slug":"phuong-trinh-song","latex":"\\frac{\\partial^2 y}{\\partial x^2} = \\frac{1}{v^2} \\frac{\\partial^2 y}{\\partial t^2}"},
+  {"name":"Cường độ","slug":"cuong-do-song","latex":"I \\propto A^2"},
+  {"name":"Chồng chất","slug":"chong-chat","latex":"y = y_1 + y_2"}
+]

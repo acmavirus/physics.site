@@ -1,0 +1,31 @@
+{
+  "centerLatex": "F \; = \; ma",
+  "colors": {
+    "F": "#dc2626",
+    "m": "#2563eb",
+    "a": "#059669"
+  },
+  "sectors": {
+    "F": { "start": -120, "end": -20, "base": 140 },
+    "m": { "start": -10, "end": 80, "base": 140 },
+    "a": { "start": 100, "end": 190, "base": 140 }
+  },
+  "groups": {
+    "F": [
+      { "latex": "N", "angle": -40, "radius": 140, "description": "Đơn vị của lực trong hệ SI" },
+      { "latex": "\\vec{F} = m\\vec{a}", "angle": 0, "radius": 160, "description": "Định luật Newton dạng vectơ" },
+      { "latex": "\\sum F = ma", "angle": 40, "radius": 140, "description": "Tổng lực tác dụng lên vật" }
+    ],
+    "m": [
+      { "latex": "kg", "angle": -40, "radius": 140, "description": "Đơn vị khối lượng trong hệ SI" },
+      { "latex": "m = \\frac{F}{a}", "angle": 0, "radius": 160, "description": "Khối lượng tính theo lực và gia tốc" },
+      { "latex": "\\rho = \\frac{m}{V}", "angle": 40, "radius": 140, "description": "Mật độ khối lượng" }
+    ],
+    "a": [
+      { "latex": "m/s^2", "angle": -40, "radius": 140, "description": "Đơn vị gia tốc trong hệ SI" },
+      { "latex": "a = \\frac{F}{m}", "angle": 0, "radius": 160, "description": "Gia tốc tính theo lực và khối lượng" },
+      { "latex": "\\vec{a} = \\frac{d\\vec{v}}{dt}", "angle": 40, "radius": 140, "description": "Gia tốc là đạo hàm của vận tốc" }
+    ]
+  }
+}
+

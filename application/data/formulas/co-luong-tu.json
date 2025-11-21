@@ -1,0 +1,8 @@
+[
+  {"name":"Phương trình Schrödinger","slug":"schrodinger","latex":"i\\hbar \\frac{\\partial}{\\partial t} \\Psi = \\hat{H} \\Psi"},
+  {"name":"Bất định Heisenberg","slug":"bat-dinh-heisenberg","latex":"\\Delta x\\,\\Delta p \\ge \\tfrac{\\hbar}{2}"},
+  {"name":"Quan hệ Planck","slug":"quan-he-planck","latex":"E = \\hbar \\omega"},
+  {"name":"Bước sóng de Broglie","slug":"de-broglie","latex":"\\lambda = \\frac{h}{p}"},
+  {"name":"Quy tắc Born","slug":"quy-tac-born","latex":"P = |\\Psi|^2"},
+  {"name":"Loại trừ Pauli","slug":"loai-tru-pauli","latex":"\\psi(1,2) = -\\psi(2,1)"}
+]

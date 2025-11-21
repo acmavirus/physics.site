@@ -1,0 +1,45 @@
+{
+  "centerLatex": "F \\; = \\; k \\frac{q_1 q_2}{r^2}",
+  "colors": {
+    "F": "#ef4444",
+    "k": "#f59e0b",
+    "q1": "#3b82f6",
+    "q2": "#22c55e",
+    "r": "#8b5cf6"
+  },
+  "sectors": {
+    "F": { "start": -150, "end": -110, "base": 140 },
+    "k": { "start": -70, "end": -30, "base": 140 },
+    "q1": { "start": 0, "end": 40, "base": 140 },
+    "q2": { "start": 80, "end": 120, "base": 140 },
+    "r": { "start": 160, "end": 200, "base": 140 }
+  },
+  "groups": {
+    "F": [
+      { "latex": "\\vec{F} = q(\\vec{E} + \\vec{v} \\times \\vec{B})", "angle": -140, "radius": 140 },
+      { "latex": "E = \\frac{F}{q}", "angle": -130, "radius": 160 },
+      { "latex": "\\mathcal{E} = - \\frac{d\\Phi_B}{dt}", "angle": -120, "radius": 140 }
+    ],
+    "k": [
+      { "latex": "k", "angle": -60, "radius": 140 },
+      { "latex": "\\oint \\vec{E} \\cdot d\\vec{A} = \\frac{Q_{enc}}{\\varepsilon_0}", "angle": -50, "radius": 160 },
+      { "latex": "\\oint \\vec{B} \\cdot d\\vec{l} = \\mu_0 I_{enc} + \\mu_0\\varepsilon_0 \\frac{d\\Phi_E}{dt}", "angle": -40, "radius": 140 }
+    ],
+    "q1": [
+      { "latex": "q_1", "angle": 10, "radius": 140 },
+      { "latex": "\\nabla \\times \\vec{E} = -\\frac{\\partial \\vec{B}}{\\partial t}", "angle": 20, "radius": 160 },
+      { "latex": "\\vec{B}(\\vec{r}) = \\frac{\\mu_0}{4\\pi} \\int \\frac{I\\, d\\vec{l} \\times \\hat{r}}{r^2}", "angle": 30, "radius": 140 }
+    ],
+    "q2": [
+      { "latex": "q_2", "angle": 90, "radius": 140 },
+      { "latex": "\\nabla \\cdot \\vec{B} = 0", "angle": 100, "radius": 160 },
+      { "latex": "\\nabla \\times \\vec{B} = \\mu_0 \\vec{J}+\\mu_0\\varepsilon_0 \\frac{\\partial \\vec{E}}{\\partial t}", "angle": 110, "radius": 140 }
+    ],
+    "r": [
+      { "latex": "r", "angle": 170, "radius": 140 },
+      { "latex": "d\\sin\\theta = m\\lambda", "angle": 180, "radius": 160 },
+      { "latex": "n_1\\sin\\theta_1 = n_2\\sin\\theta_2", "angle": 190, "radius": 140 }
+    ]
+  }
+}
+

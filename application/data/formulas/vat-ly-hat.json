@@ -1,0 +1,7 @@
+[
+  {"name":"Phân rã phóng xạ","slug":"phan-ra-phong-xa","latex":"N = N_0 e^{-\\lambda t}"},
+  {"name":"Tiết diện","slug":"tiet-dien","latex":"\\sigma"},
+  {"name":"Đường đi tự do trung bình","slug":"duong-di-tu-do-trung-binh","latex":"\\ell = \\frac{1}{n\\sigma}"},
+  {"name":"Quy tắc vàng Fermi","slug":"quy-tac-vang-fermi","latex":"w_{i\\to f} = \\frac{2\\pi}{\\hbar} |\\langle f|H'|i \\rangle|^2 \\rho(E)"},
+  {"name":"Khối lượng hạt","slug":"khoi-luong-hat","latex":"m"}
+]

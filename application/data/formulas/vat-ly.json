@@ -1,0 +1,6 @@
+[
+  {"name":"Bảo toàn năng lượng","slug":"bao-toan-nang-luong","latex":"\\Delta E = 0"},
+  {"name":"Bảo toàn động lượng","slug":"bao-toan-dong-luong","latex":"\\sum \\vec{p} = \\text{const}"},
+  {"name":"Công suất","slug":"cong-suat","latex":"P = \\frac{dW}{dt}"},
+  {"name":"Khối lượng riêng","slug":"khoi-luong-rieng","latex":"\\rho = \\frac{m}{V}"}
+]

@@ -1,0 +1,45 @@
+{
+  "centerLatex": "x \\; = \\; A \\cos(\\omega t + \\varphi)",
+  "colors": {
+    "x": "#ef4444",
+    "A": "#22c55e",
+    "omega": "#8b5cf6",
+    "t": "#3b82f6",
+    "phi": "#f59e0b"
+  },
+  "sectors": {
+    "x": { "start": -150, "end": -110, "base": 140 },
+    "A": { "start": -70, "end": -30, "base": 140 },
+    "omega": { "start": 0, "end": 40, "base": 140 },
+    "t": { "start": 80, "end": 120, "base": 140 },
+    "phi": { "start": 160, "end": 200, "base": 140 }
+  },
+  "groups": {
+    "x": [
+      { "latex": "x = A \\cos(\\omega t + \\varphi)", "angle": -140, "radius": 140 },
+      { "latex": "y = y_1 + y_2", "angle": -130, "radius": 160 },
+      { "latex": "I \\propto A^2", "angle": -120, "radius": 140 }
+    ],
+    "A": [
+      { "latex": "A", "angle": -60, "radius": 140 },
+      { "latex": "U_s = \\tfrac{1}{2} k x^2", "angle": -50, "radius": 160 },
+      { "latex": "K = \\tfrac{1}{2} m v^2", "angle": -40, "radius": 140 }
+    ],
+    "omega": [
+      { "latex": "\\omega = \\sqrt{\\tfrac{k}{m}}", "angle": 10, "radius": 140 },
+      { "latex": "T = \\frac{2\\pi}{\\omega}", "angle": 20, "radius": 160 },
+      { "latex": "E = \\hbar \\omega", "angle": 30, "radius": 140 }
+    ],
+    "t": [
+      { "latex": "t", "angle": 90, "radius": 140 },
+      { "latex": "s = s_0 + v_0 t + \\tfrac{1}{2} a t^2", "angle": 100, "radius": 160 },
+      { "latex": "v = \\frac{ds}{dt}", "angle": 110, "radius": 140 }
+    ],
+    "phi": [
+      { "latex": "\\varphi", "angle": 170, "radius": 140 },
+      { "latex": "\\Delta y = \\frac{\\lambda L}{d}", "angle": 180, "radius": 160 },
+      { "latex": "d\\sin\\theta = m\\lambda", "angle": 190, "radius": 140 }
+    ]
+  }
+}
+

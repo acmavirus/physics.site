@@ -1,0 +1,8 @@
+[
+  {"name":"Vạn vật hấp dẫn","slug":"van-vat-hap-dan","latex":"F = G \\frac{m_1 m_2}{r^2}"},
+  {"name":"Hooke","slug":"hooke","latex":"F = -k x"},
+  {"name":"Ma sát","slug":"ma-sat","latex":"f = \\mu N"},
+  {"name":"Hướng tâm","slug":"huong-tam","latex":"F_c = \\frac{m v^2}{r}"},
+  {"name":"Ác-si-mét","slug":"ac-si-met","latex":"F_b = \\rho g V"},
+  {"name":"Lực cản","slug":"luc-can","latex":"F_d = \\tfrac{1}{2} \\rho C_d A v^2"}
+]

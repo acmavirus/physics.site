@@ -1,0 +1,31 @@
+{
+  "centerLatex": "p \\; = \\; m v",
+  "colors": {
+    "p": "#ef4444",
+    "m": "#3b82f6",
+    "v": "#22c55e"
+  },
+  "sectors": {
+    "p": { "start": -140, "end": -40, "base": 140 },
+    "m": { "start": -10, "end": 70, "base": 140 },
+    "v": { "start": 110, "end": 200, "base": 140 }
+  },
+  "groups": {
+    "p": [
+      { "latex": "\\mathrm{kg\\cdot m/s}", "angle": -40, "radius": 140 },
+      { "latex": "\\vec{p} = \\gamma m \\vec{v}", "angle": 0, "radius": 160 },
+      { "latex": "\\sum \\vec{p} = \\text{const}", "angle": 40, "radius": 140 }
+    ],
+    "m": [
+      { "latex": "m", "angle": -40, "radius": 140 },
+      { "latex": "E = m c^2", "angle": 0, "radius": 160 },
+      { "latex": "\\vec{L} = \\vec{r} \\times \\vec{p}", "angle": 40, "radius": 140 }
+    ],
+    "v": [
+      { "latex": "\\mathrm{m/s}", "angle": -40, "radius": 140 },
+      { "latex": "v = \\frac{ds}{dt}", "angle": 0, "radius": 160 },
+      { "latex": "v = \\frac{\\Delta s}{\\Delta t}", "angle": 40, "radius": 140 }
+    ]
+  }
+}
+

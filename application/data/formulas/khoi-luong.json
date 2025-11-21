@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Khối lượng riêng",
+    "slug": "khoi-luong-rieng",
+    "latex": "\\rho = \\frac{m}{V}"
+  },
+  {
+    "name": "Khuyết khối",
+    "slug": "khuyet-khoi",
+    "latex": "\\Delta m = Z m_p + N m_n - m_{hn}"
+  },
+  {
+    "name": "Khối lượng–năng lượng",
+    "slug": "khoi-luong-nang-luong",
+    "latex": "E = m c^2"
+  }
+]

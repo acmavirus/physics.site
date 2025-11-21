@@ -1,0 +1,31 @@
+{
+  "centerLatex": "K \\; = \\; \\tfrac{1}{2} m v^2",
+  "colors": {
+    "K": "#ef4444",
+    "m": "#3b82f6",
+    "v": "#22c55e"
+  },
+  "sectors": {
+    "K": { "start": -140, "end": -40, "base": 140 },
+    "m": { "start": -10, "end": 70, "base": 140 },
+    "v": { "start": 110, "end": 200, "base": 140 }
+  },
+  "groups": {
+    "K": [
+      { "latex": "W = \\Delta K", "angle": -40, "radius": 140 },
+      { "latex": "U_s = \\tfrac{1}{2} k x^2", "angle": 0, "radius": 160 },
+      { "latex": "U_g = m g h", "angle": 40, "radius": 140 }
+    ],
+    "m": [
+      { "latex": "m", "angle": -40, "radius": 140 },
+      { "latex": "E = m c^2", "angle": 0, "radius": 160 },
+      { "latex": "\\rho = \\frac{m}{V}", "angle": 40, "radius": 140 }
+    ],
+    "v": [
+      { "latex": "v = \\frac{ds}{dt}", "angle": -40, "radius": 140 },
+      { "latex": "v = f\\lambda", "angle": 0, "radius": 160 },
+      { "latex": "a = \\frac{dv}{dt}", "angle": 40, "radius": 140 }
+    ]
+  }
+}
+

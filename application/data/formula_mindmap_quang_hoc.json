@@ -1,0 +1,38 @@
+{
+  "centerLatex": "n_1\\sin\\theta_1 \\; = \\; n_2\\sin\\theta_2",
+  "colors": {
+    "n1": "#3b82f6",
+    "theta1": "#ef4444",
+    "n2": "#22c55e",
+    "theta2": "#f59e0b"
+  },
+  "sectors": {
+    "n1": { "start": -130, "end": -90, "base": 140 },
+    "theta1": { "start": -50, "end": -10, "base": 140 },
+    "n2": { "start": 30, "end": 70, "base": 140 },
+    "theta2": { "start": 110, "end": 150, "base": 140 }
+  },
+  "groups": {
+    "n1": [
+      { "latex": "n_1", "angle": -120, "radius": 140 },
+      { "latex": "\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}", "angle": -110, "radius": 160 },
+      { "latex": "\\lambda = \\frac{h}{p}", "angle": -100, "radius": 140 }
+    ],
+    "theta1": [
+      { "latex": "\\theta_1", "angle": -40, "radius": 140 },
+      { "latex": "\\Delta y = \\frac{\\lambda L}{d}", "angle": -30, "radius": 160 },
+      { "latex": "d\\sin\\theta = m\\lambda", "angle": -20, "radius": 140 }
+    ],
+    "n2": [
+      { "latex": "n_2", "angle": 40, "radius": 140 },
+      { "latex": "\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}", "angle": 50, "radius": 160 },
+      { "latex": "v = f\\lambda", "angle": 60, "radius": 140 }
+    ],
+    "theta2": [
+      { "latex": "\\theta_2", "angle": 120, "radius": 140 },
+      { "latex": "\\sin\\theta_c = \\frac{n_2}{n_1}", "angle": 130, "radius": 160 },
+      { "latex": "\\theta", "angle": 140, "radius": 140 }
+    ]
+  }
+}
+

@@ -1,0 +1,92 @@
+[
+  {
+    "text": "Vật lý",
+    "slug": "vat-ly",
+    "weight": 9
+  },
+  {
+    "text": "Cơ học",
+    "slug": "co-hoc",
+    "weight": 7
+  },
+  {
+    "text": "Điện từ",
+    "slug": "dien-tu",
+    "weight": 6
+  },
+  {
+    "text": "Quang học",
+    "slug": "quang-hoc",
+    "weight": 5.5
+  },
+  {
+    "text": "Nhiệt học",
+    "slug": "nhiet-hoc",
+    "weight": 5
+  },
+  {
+    "text": "Cơ lượng tử",
+    "slug": "co-luong-tu",
+    "weight": 6.5
+  },
+  {
+    "text": "Thuyết tương đối",
+    "slug": "thuyet-tuong-doi",
+    "weight": 4.5
+  },
+  {
+    "text": "Năng lượng",
+    "slug": "nang-luong",
+    "weight": 4
+  },
+  {
+    "text": "Trường",
+    "slug": "truong",
+    "weight": 3.5
+  },
+  {
+    "text": "Lực",
+    "slug": "luc",
+    "weight": 3
+  },
+  {
+    "text": "Khối lượng",
+    "slug": "khoi-luong",
+    "weight": 5
+  },
+  {
+    "text": "Động lượng",
+    "slug": "dong-luong",
+    "weight": 4
+  },
+  {
+    "text": "Dao động",
+    "slug": "dao-dong",
+    "weight": 3.5
+  },
+  {
+    "text": "Sóng",
+    "slug": "song",
+    "weight": 5.5
+  },
+  {
+    "text": "Tần số",
+    "slug": "tan-so",
+    "weight": 3
+  },
+  {
+    "text": "Vận tốc",
+    "slug": "van-toc",
+    "weight": 4.5
+  },
+  {
+    "text": "Vật lý hạt",
+    "slug": "vat-ly-hat",
+    "weight": 4.8
+  },
+  {
+    "text": "Vật lý thiên văn",
+    "slug": "vat-ly-thien-van",
+    "weight": 4.2
+  }
+]

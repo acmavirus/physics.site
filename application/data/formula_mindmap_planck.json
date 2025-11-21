@@ -1,0 +1,31 @@
+{
+  "centerLatex": "E \\; = \\; \\hbar \\omega",
+  "colors": {
+    "E": "#ef4444",
+    "hbar": "#8b5cf6",
+    "omega": "#3b82f6"
+  },
+  "sectors": {
+    "E": { "start": -140, "end": -40, "base": 140 },
+    "hbar": { "start": -10, "end": 70, "base": 140 },
+    "omega": { "start": 110, "end": 200, "base": 140 }
+  },
+  "groups": {
+    "E": [
+      { "latex": "E = h f", "angle": -40, "radius": 140 },
+      { "latex": "E = m c^2", "angle": 0, "radius": 160 },
+      { "latex": "E_0 = mc^2", "angle": 40, "radius": 140 }
+    ],
+    "hbar": [
+      { "latex": "\\hbar = \\frac{h}{2\\pi}", "angle": -40, "radius": 140 },
+      { "latex": "\\lambda = \\frac{h}{p}", "angle": 0, "radius": 160 },
+      { "latex": "\\Delta x\\,\\Delta p \\ge \\tfrac{\\hbar}{2}", "angle": 40, "radius": 140 }
+    ],
+    "omega": [
+      { "latex": "\\omega = 2\\pi f", "angle": -40, "radius": 140 },
+      { "latex": "T = \\frac{2\\pi}{\\omega}", "angle": 0, "radius": 160 },
+      { "latex": "x = A \\cos(\\omega t + \\varphi)", "angle": 40, "radius": 140 }
+    ]
+  }
+}
+

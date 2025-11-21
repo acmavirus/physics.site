@@ -1,0 +1,6 @@
+[
+  {"name":"Động lượng","slug":"dong-luong","latex":"\\vec{p} = m \\vec{v}"},
+  {"name":"Xung lượng","slug":"xung-luong","latex":"J = \\int F\,dt"},
+  {"name":"Bảo toàn động lượng","slug":"bao-toan-dong-luong","latex":"\\sum \\vec{p} = \\text{const}"},
+  {"name":"Động lượng tương đối","slug":"dong-luong-tuong-doi","latex":"\\vec{p} = \\gamma m \\vec{v}"}
+]

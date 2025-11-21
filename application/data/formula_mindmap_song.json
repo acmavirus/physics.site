@@ -1,0 +1,31 @@
+{
+  "centerLatex": "v \\; = \\; f \\lambda",
+  "colors": {
+    "v": "#22c55e",
+    "f": "#8b5cf6",
+    "lambda": "#f97316"
+  },
+  "sectors": {
+    "v": { "start": -140, "end": -40, "base": 140 },
+    "f": { "start": -10, "end": 70, "base": 140 },
+    "lambda": { "start": 110, "end": 200, "base": 140 }
+  },
+  "groups": {
+    "v": [
+      { "latex": "\\mathrm{m/s}", "angle": -40, "radius": 140 },
+      { "latex": "\\frac{\\partial^2 y}{\\partial x^2} = \\frac{1}{v^2} \\frac{\\partial^2 y}{\\partial t^2}", "angle": 0, "radius": 160 },
+      { "latex": "I \\propto A^2", "angle": 40, "radius": 140 }
+    ],
+    "f": [
+      { "latex": "f = \\frac{1}{T}", "angle": -40, "radius": 140 },
+      { "latex": "\\omega = 2\\pi f", "angle": 0, "radius": 160 },
+      { "latex": "E = h f", "angle": 40, "radius": 140 }
+    ],
+    "lambda": [
+      { "latex": "\\lambda = \\frac{h}{p}", "angle": -40, "radius": 140 },
+      { "latex": "d\\sin\\theta = m\\lambda", "angle": 0, "radius": 160 },
+      { "latex": "\\Delta y = \\frac{\\lambda L}{d}", "angle": 40, "radius": 140 }
+    ]
+  }
+}
+

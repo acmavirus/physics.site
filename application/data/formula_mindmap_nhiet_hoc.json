@@ -1,0 +1,45 @@
+{
+  "centerLatex": "pV \\; = \\; n R T",
+  "colors": {
+    "p": "#ef4444",
+    "V": "#22c55e",
+    "n": "#3b82f6",
+    "R": "#f59e0b",
+    "T": "#8b5cf6"
+  },
+  "sectors": {
+    "p": { "start": -150, "end": -110, "base": 140 },
+    "V": { "start": -70, "end": -30, "base": 140 },
+    "n": { "start": 0, "end": 40, "base": 140 },
+    "R": { "start": 80, "end": 120, "base": 140 },
+    "T": { "start": 160, "end": 200, "base": 140 }
+  },
+  "groups": {
+    "p": [
+      { "latex": "\\mathrm{Pa}", "angle": -140, "radius": 140 },
+      { "latex": "\\Delta U = Q - W", "angle": -130, "radius": 160 },
+      { "latex": "\\frac{dP}{dT} = \\frac{L}{T \\Delta v}", "angle": -120, "radius": 140 }
+    ],
+    "V": [
+      { "latex": "V", "angle": -60, "radius": 140 },
+      { "latex": "W = \\int \\vec{F} \\cdot d\\vec{s}", "angle": -50, "radius": 160 },
+      { "latex": "U_s = \\tfrac{1}{2} k x^2", "angle": -40, "radius": 140 }
+    ],
+    "n": [
+      { "latex": "n\\, (\\mathrm{mol})", "angle": 10, "radius": 140 },
+      { "latex": "C = \\frac{dQ}{dT}", "angle": 20, "radius": 160 },
+      { "latex": "\\Delta S = \\int \\frac{dQ_{rev}}{T}", "angle": 30, "radius": 140 }
+    ],
+    "R": [
+      { "latex": "R", "angle": 90, "radius": 140 },
+      { "latex": "\\eta = 1 - \\frac{T_c}{T_h}", "angle": 100, "radius": 160 },
+      { "latex": "pV = nRT", "angle": 110, "radius": 140 }
+    ],
+    "T": [
+      { "latex": "T\\, (K)", "angle": 170, "radius": 140 },
+      { "latex": "T = \\frac{2\\pi}{\\omega}", "angle": 180, "radius": 160 },
+      { "latex": "\\omega = 2\\pi f", "angle": 190, "radius": 140 }
+    ]
+  }
+}
+

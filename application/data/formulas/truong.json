@@ -1,0 +1,7 @@
+[
+  {"name":"Điện trường","slug":"dien-truong","latex":"E = \\frac{F}{q}"},
+  {"name":"Từ trường","slug":"tu-truong","latex":"B = \\nabla \\times \\vec{A}"},
+  {"name":"Trường hấp dẫn","slug":"truong-hap-dan","latex":"g = \\frac{GM}{r^2}"},
+  {"name":"Thế điện","slug":"the-dien","latex":"V = \\frac{W}{q}"},
+  {"name":"Đường sức","slug":"duong-suc","latex":"\\text{Đường cong theo } \\vec{E}, \\vec{B}"}
+]

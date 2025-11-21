@@ -1,0 +1,7 @@
+[
+  {"name":"Định luật Kepler","slug":"dinh-luat-kepler","latex":"\\frac{T^2}{a^3} = \\text{const}"},
+  {"name":"Định luật Hubble","slug":"dinh-luat-hubble","latex":"v = H_0 d"},
+  {"name":"Vận tốc thoát","slug":"van-toc-thoat","latex":"v_{esc} = \\sqrt{\\frac{2GM}{R}}"},
+  {"name":"Schwarzschild","slug":"schwarzschild","latex":"r_s = \\frac{2GM}{c^2}"},
+  {"name":"Độ sáng–khoảng cách","slug":"do-sang-khoang-cach","latex":"m - M = 5 \\log_{10}(d/10\\,\\text{pc})"}
+]

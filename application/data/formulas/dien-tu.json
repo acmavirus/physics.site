@@ -1,0 +1,9 @@
+[
+  {"name":"Định luật Coulomb","slug":"dinh-luat-coulomb","latex":"F = k \\frac{q_1 q_2}{r^2}"},
+  {"name":"Định luật Gauss","slug":"dinh-luat-gauss","latex":"\\oint \\vec{E} \\cdot d\\vec{A} = \\frac{Q_{enc}}{\\varepsilon_0}"},
+  {"name":"Định luật Biot–Savart","slug":"dinh-luat-biot-savart","latex":"\\vec{B}(\\vec{r}) = \\frac{\\mu_0}{4\\pi} \\int \\frac{I\, d\\vec{l} \\times \\hat{r}}{r^2}"},
+  {"name":"Định luật Ampère","slug":"dinh-luat-ampere","latex":"\\oint \\vec{B} \\cdot d\\vec{l} = \\mu_0 I_{enc} + \\mu_0\\varepsilon_0 \\frac{d\\Phi_E}{dt}"},
+  {"name":"Định luật Faraday","slug":"dinh-luat-faraday","latex":"\\mathcal{E} = - \\frac{d\\Phi_B}{dt}"},
+  {"name":"Phương trình Maxwell","slug":"phuong-trinh-maxwell","latex":"\\nabla\\cdot\\vec{E}=\\rho/\\varepsilon_0;\\ \nabla\\cdot\\vec{B}=0;\\ \nabla\\times\\vec{E}=-\\partial\\vec{B}/\\partial t;\\ \nabla\\times\\vec{B}=\\mu_0 \\vec{J}+\\mu_0\\varepsilon_0\\partial\\vec{E}/\\partial t"},
+  {"name":"Lực Lorentz","slug":"luc-lorentz","latex":"\\vec{F} = q(\\vec{E} + \\vec{v} \\times \\vec{B})"}
+]

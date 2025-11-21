@@ -1,0 +1,7 @@
+[
+  {"name":"Công suất","slug":"cong-suat","latex":"P = \\frac{dW}{dt}"},
+  {"name":"Công","slug":"cong","latex":"W = \\int \\vec{F} \\cdot d\\vec{s}"},
+  {"name":"Động năng","slug":"dong-nang","latex":"K = \\tfrac{1}{2} m v^2"},
+  {"name":"Thế năng trọng trường","slug":"the-nang-trong-truong","latex":"U_g = m g h"},
+  {"name":"Thế năng đàn hồi","slug":"the-nang-dan-hoi","latex":"U_s = \\tfrac{1}{2} k x^2"}
+]

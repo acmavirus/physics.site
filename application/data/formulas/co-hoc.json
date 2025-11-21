@@ -1,0 +1,8 @@
+[
+  {"name":"Định luật Newton","slug":"dinh-luat-newton","latex":"\\vec{F} = m \\vec{a}"},
+  {"name":"Phương trình chuyển động","slug":"phuong-trinh-chuyen-dong","latex":"s = s_0 + v_0 t + \\tfrac{1}{2} a t^2"},
+  {"name":"Định lý công - năng","slug":"dinh-ly-cong-nang","latex":"W = \\Delta K"},
+  {"name":"Momen động lượng","slug":"momen-dong-luong","latex":"\\vec{L} = \\vec{r} \\times \\vec{p}"},
+  {"name":"Động lực học quay","slug":"dong-luc-hoc-quay","latex":"\\tau = I \\alpha"},
+  {"name":"Dao động điều hòa","slug":"dao-dong-dieu-hoa","latex":"x = A\\cos(\\omega t + \\varphi)"}
+]

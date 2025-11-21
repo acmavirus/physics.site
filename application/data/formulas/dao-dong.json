@@ -1,0 +1,7 @@
+[
+  {"name":"Dao động điều hòa","slug":"dao-dong-dieu-hoa","latex":"x = A\\cos(\\omega t + \\varphi)"},
+  {"name":"Chu kỳ","slug":"chu-ky","latex":"T = \\frac{2\\pi}{\\omega}"},
+  {"name":"Tần số góc","slug":"tan-so-goc","latex":"\\omega = \\sqrt{\\tfrac{k}{m}}"},
+  {"name":"Con lắc đơn","slug":"con-lac-don","latex":"T = 2\\pi\\sqrt{\\tfrac{L}{g}}"},
+  {"name":"Dao động tắt dần","slug":"dao-dong-tat-dan","latex":"x = A e^{-\\beta t} \\cos(\\omega' t + \\varphi)"}
+]

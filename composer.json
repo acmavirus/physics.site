@@ -1,0 +1,6 @@
+{
+    "require": {
+        "pocketarc/codeigniter": "^3.2",
+        "kint-php/kint": "^5.1"
+    }
+}

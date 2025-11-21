@@ -1,0 +1,7 @@
+[
+  {"name":"Hệ số Lorentz","slug":"lorentz","latex":"\\gamma = \\frac{1}{\\sqrt{1 - v^2/c^2}}"},
+  {"name":"Giãn nở thời gian","slug":"gian-no-thoi-gian","latex":"\\Delta t = \\gamma \\Delta t_0"},
+  {"name":"Co độ dài","slug":"co-do-dai","latex":"L = \\frac{L_0}{\\gamma}"},
+  {"name":"Năng lượng tương đối","slug":"nang-luong-tuong-doi","latex":"E = \\gamma m c^2"},
+  {"name":"Khối lượng–năng lượng","slug":"khoi-luong-nang-luong","latex":"E = m c^2"}
+]

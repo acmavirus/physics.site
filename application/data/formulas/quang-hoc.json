@@ -1,0 +1,7 @@
+[
+  {"name":"Định luật Snell","slug":"dinh-luat-snell","latex":"n_1\\sin\\theta_1 = n_2\\sin\\theta_2"},
+  {"name":"Thấu kính","slug":"thau-kinh","latex":"\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}"},
+  {"name":"Gương","slug":"guong","latex":"\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}"},
+  {"name":"Giao thoa Young","slug":"giao-thoa-young","latex":"\\Delta y = \\frac{\\lambda L}{d}"},
+  {"name":"Nhiễu xạ cách tử","slug":"nhieu-xa-cach-tu","latex":"d\\sin\\theta = m\\lambda"}
+]

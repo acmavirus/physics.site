@@ -1,0 +1,4 @@
+[
+  {"name":"Tần số","slug":"tan-so","latex":"f = \\frac{1}{T}"},
+  {"name":"Tần số góc","slug":"tan-so-goc","latex":"\\omega = 2\\pi f"}
+]

@@ -1,0 +1,8 @@
+[
+  {"name":"Phương trình khí lý tưởng","slug":"khi-ly-tuong","latex":"pV = nRT"},
+  {"name":"Định luật thứ nhất nhiệt động lực học","slug":"dinh-luat-thu-nhat","latex":"\\Delta U = Q - W"},
+  {"name":"Hiệu suất Carnot","slug":"hieu-suat-carnot","latex":"\\eta = 1 - \\frac{T_c}{T_h}"},
+  {"name":"Nhiệt dung","slug":"nhiet-dung","latex":"C = \\frac{dQ}{dT}"},
+  {"name":"Entropy","slug":"entropy","latex":"\\Delta S = \\int \\frac{dQ_{rev}}{T}"},
+  {"name":"Clausius–Clapeyron","slug":"clausius-clapeyron","latex":"\\frac{dP}{dT} = \\frac{L}{T \\Delta v}"}
+]

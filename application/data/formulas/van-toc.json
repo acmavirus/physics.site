@@ -1,0 +1,5 @@
+[
+  {"name":"Vận tốc trung bình","slug":"van-toc-trung-binh","latex":"v = \\frac{\\Delta s}{\\Delta t}"},
+  {"name":"Vận tốc tức thời","slug":"van-toc-tuc-thoi","latex":"v = \\frac{ds}{dt}"},
+  {"name":"Gia tốc","slug":"gia-toc","latex":"a = \\frac{dv}{dt}"}
+]

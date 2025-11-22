@@ -1,53 +1,16 @@
 {
     "centerLatex": "F_d = \\tfrac{1}{2} \\rho C_d A v^2",
     "colors": {
-        "E": "#e63946",
-        "m": "#1d4ed8",
-        "c": "#16a34a"
+        "F_d": "#e63946",
+        "C_d": "#1d4ed8",
+        "A": "#16a34a",
+        "v": "#f97316"
     },
-    "sectors": {
-        "E": {
-            "start": -130,
-            "end": -30,
-            "base": 140
-        },
-        "m": {
-            "start": -10,
-            "end": 70,
-            "base": 140
-        },
-        "c": {
-            "start": 110,
-            "end": 200,
-            "base": 140
-        }
-    },
+    "sectors": {},
     "groups": {
-        "E": [
-            {
-                "latex": "F_d = \\tfrac{1}{2} \\rho C_d A v^2",
-                "angle": -40,
-                "radius": 140
-            },
-            {
-                "latex": "F_d = \\tfrac{1}{2} \\rho C_d A v^2",
-                "angle": 0,
-                "radius": 160
-            }
-        ],
-        "m": [
-            {
-                "latex": "F_d = \\tfrac{1}{2} \\rho C_d A v^2",
-                "angle": 0,
-                "radius": 160
-            }
-        ],
-        "c": [
-            {
-                "latex": "F_d = \\tfrac{1}{2} \\rho C_d A v^2",
-                "angle": 40,
-                "radius": 140
-            }
-        ]
+        "F_d": [],
+        "C_d": [],
+        "A": [],
+        "v": []
     }
 }

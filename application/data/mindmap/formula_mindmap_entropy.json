@@ -1,53 +1,18 @@
 {
     "centerLatex": "\\Delta S = \\int \\frac{dQ_{rev}}{T}",
     "colors": {
-        "E": "#e63946",
-        "m": "#1d4ed8",
-        "c": "#16a34a"
+        "S": "#ef4444",
+        "Q": "#3b82f6",
+        "T": "#22c55e"
     },
     "sectors": {
-        "E": {
-            "start": -130,
-            "end": -30,
-            "base": 140
-        },
-        "m": {
-            "start": -10,
-            "end": 70,
-            "base": 140
-        },
-        "c": {
-            "start": 110,
-            "end": 200,
-            "base": 140
-        }
+        "S": { "start": -120, "end": -20, "base": 140 },
+        "Q": { "start": -10, "end": 80, "base": 140 },
+        "T": { "start": 100, "end": 190, "base": 140 }
     },
     "groups": {
-        "E": [
-            {
-                "latex": "\\Delta S = \\int \\frac{dQ_{rev}}{T}",
-                "angle": -40,
-                "radius": 140
-            },
-            {
-                "latex": "\\Delta S = \\int \\frac{dQ_{rev}}{T}",
-                "angle": 0,
-                "radius": 160
-            }
-        ],
-        "m": [
-            {
-                "latex": "\\Delta S = \\int \\frac{dQ_{rev}}{T}",
-                "angle": 0,
-                "radius": 160
-            }
-        ],
-        "c": [
-            {
-                "latex": "\\Delta S = \\int \\frac{dQ_{rev}}{T}",
-                "angle": 40,
-                "radius": 140
-            }
-        ]
+        "S": [],
+        "Q": [],
+        "T": []
     }
 }

@@ -1,53 +1,18 @@
 {
     "centerLatex": "s = s_0 + v_0 t + \\tfrac{1}{2} a t^2",
     "colors": {
-        "E": "#e63946",
-        "m": "#1d4ed8",
-        "c": "#16a34a"
+        "s": "#ef4444",
+        "s_0": "#f97316",
+        "v_0": "#3b82f6",
+        "t": "#22c55e",
+        "a": "#a855f7"
     },
-    "sectors": {
-        "E": {
-            "start": -130,
-            "end": -30,
-            "base": 140
-        },
-        "m": {
-            "start": -10,
-            "end": 70,
-            "base": 140
-        },
-        "c": {
-            "start": 110,
-            "end": 200,
-            "base": 140
-        }
-    },
+    "sectors": {},
     "groups": {
-        "E": [
-            {
-                "latex": "s = s_0 + v_0 t + \\tfrac{1}{2} a t^2",
-                "angle": -40,
-                "radius": 140
-            },
-            {
-                "latex": "s = s_0 + v_0 t + \\tfrac{1}{2} a t^2",
-                "angle": 0,
-                "radius": 160
-            }
-        ],
-        "m": [
-            {
-                "latex": "s = s_0 + v_0 t + \\tfrac{1}{2} a t^2",
-                "angle": 0,
-                "radius": 160
-            }
-        ],
-        "c": [
-            {
-                "latex": "s = s_0 + v_0 t + \\tfrac{1}{2} a t^2",
-                "angle": 40,
-                "radius": 140
-            }
-        ]
+        "s": [],
+        "s_0": [],
+        "v_0": [],
+        "t": [],
+        "a": []
     }
 }

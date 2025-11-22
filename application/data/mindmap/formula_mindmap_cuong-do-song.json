@@ -1,53 +1,21 @@
 {
     "centerLatex": "I \\propto A^2",
     "colors": {
-        "E": "#e63946",
-        "m": "#1d4ed8",
-        "c": "#16a34a"
+        "I": "#ef4444",
+        "A": "#3b82f6"
     },
     "sectors": {
-        "E": {
-            "start": -130,
-            "end": -30,
-            "base": 140
-        },
-        "m": {
-            "start": -10,
-            "end": 70,
-            "base": 140
-        },
-        "c": {
-            "start": 110,
-            "end": 200,
-            "base": 140
-        }
+        "I": { "start": -120, "end": -20, "base": 140 },
+        "A": { "start": -10, "end": 80, "base": 140 }
     },
     "groups": {
-        "E": [
-            {
-                "latex": "I \\propto A^2",
-                "angle": -40,
-                "radius": 140
-            },
-            {
-                "latex": "I \\propto A^2",
-                "angle": 0,
-                "radius": 160
-            }
+        "I": [
+            { "latex": "I = k A^2", "angle": 0, "radius": 100 },
+            { "latex": "I_{max} = max(I)", "angle": 60, "radius": 120 }
         ],
-        "m": [
-            {
-                "latex": "I \\propto A^2",
-                "angle": 0,
-                "radius": 160
-            }
-        ],
-        "c": [
-            {
-                "latex": "I \\propto A^2",
-                "angle": 40,
-                "radius": 140
-            }
+        "A": [
+            { "latex": "A = Area", "angle": 0, "radius": 100 },
+            { "latex": "A_{min} = min(A)", "angle": 60, "radius": 120 }
         ]
     }
 }

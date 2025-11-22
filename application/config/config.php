@@ -23,8 +23,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$base_url = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-$config['base_url'] = $base_url;
+if (PHP_SAPI === 'cli') {
+    $config['base_url'] = 'http://localhost/';
+} else {
+    $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : (isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : 'localhost');
+    $config['base_url'] = $scheme . '://' . $host . '/';
+}
 
 /*
 |--------------------------------------------------------------------------

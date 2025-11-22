@@ -1,0 +1,53 @@
+{
+    "centerLatex": "x = A e^{-\\beta t} \\cos(\\omega' t + \\varphi)",
+    "colors": {
+        "E": "#e63946",
+        "m": "#1d4ed8",
+        "c": "#16a34a"
+    },
+    "sectors": {
+        "E": {
+            "start": -130,
+            "end": -30,
+            "base": 140
+        },
+        "m": {
+            "start": -10,
+            "end": 70,
+            "base": 140
+        },
+        "c": {
+            "start": 110,
+            "end": 200,
+            "base": 140
+        }
+    },
+    "groups": {
+        "E": [
+            {
+                "latex": "x = A e^{-\\beta t} \\cos(\\omega' t + \\varphi)",
+                "angle": -40,
+                "radius": 140
+            },
+            {
+                "latex": "x = A e^{-\\beta t} \\cos(\\omega' t + \\varphi)",
+                "angle": 0,
+                "radius": 160
+            }
+        ],
+        "m": [
+            {
+                "latex": "x = A e^{-\\beta t} \\cos(\\omega' t + \\varphi)",
+                "angle": 0,
+                "radius": 160
+            }
+        ],
+        "c": [
+            {
+                "latex": "x = A e^{-\\beta t} \\cos(\\omega' t + \\varphi)",
+                "angle": 40,
+                "radius": 140
+            }
+        ]
+    }
+}

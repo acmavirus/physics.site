@@ -5,37 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Danh mục công thức</title>
-    <style>
-        html,
-        body {
-            height: 100%
-        }
-
-        body {
-            margin: 0;
-            background: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center
-        }
-
-        #wordcloud { width: 95vw; height: 78vh }
-    </style>
-    <style>
-        #physics-bg {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0
-        }
-
-        #wordcloud {
-            position: relative;
-            z-index: 1
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/common.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700;800&family=STIX+Two+Text:wght@700;800&display=swap" rel="stylesheet">
@@ -49,17 +19,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <?php
-    $baseDir = 'application/data/formulas/';
-    $catPath = $baseDir . $slug . '.json';
-    if (file_exists($catPath)) {
-        $json = file_get_contents($catPath);
-        $arr = json_decode($json, true);
-        if (is_array($arr)) {
-            $words = $arr;
-        }
-    }
-    ?>
+    <?php /* dữ liệu đã được controller truyền xuống */ ?>
+    <script>
+        window.phpItems = <?php echo isset($words) ? json_encode($words, JSON_UNESCAPED_UNICODE) : '[]'; ?>;
+        window.detailBase = <?php echo json_encode(isset($formula_base) ? $formula_base : '/cong-thuc/'); ?>;
+    </script>
+    <script src="/assets/js/physics-bg.js"></script>
+    <script src="/assets/js/category.js"></script>
     <script>
         (function() {
             var container = document.getElementById('wordcloud');
@@ -277,14 +243,9 @@
                     })();
                 }).start();
             }
-            drawBackground();
             render();
-            var ro = new ResizeObserver(function() {
-                drawBackground();
-                render()
-            });
+            var ro = new ResizeObserver(function() { render() });
             ro.observe(container);
-            window.addEventListener('resize', drawBackground);
         })();
     </script>
 </body>

@@ -20,6 +20,15 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('public/index');
+		$catPath = APPPATH . 'data/physics_categories.json';
+		$words = [];
+		if (file_exists($catPath)) {
+			$json = file_get_contents($catPath);
+			$arr = json_decode($json, true);
+			if (is_array($arr)) { $words = $arr; }
+		}
+		$data['words'] = $words;
+		$data['category_base'] = '/danh-muc/';
+		$this->load->view('public/index', $data);
 	}
 }

@@ -5,40 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Word Cloud</title>
-    <style>
-        html,
-        body {
-            height: 100%
-        }
-
-        body {
-            margin: 0;
-            background: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center
-        }
-
-        #wordcloud {
-            width: 95vw;
-            height: 80vh
-        }
-    </style>
-    <style>
-        #physics-bg {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0
-        }
-
-        #wordcloud {
-            position: relative;
-            z-index: 1
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/common.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700;800&family=STIX+Two+Text:wght@700;800&display=swap" rel="stylesheet">
@@ -49,18 +16,13 @@
     <div id="wordcloud"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
-    <?php
-        if (!isset($words)) {
-            $catPath = __DIR__ . '/../../data/physics_categories.json';
-            if (file_exists($catPath)) {
-                $json = file_get_contents($catPath);
-                $arr = json_decode($json, true);
-                if (is_array($arr)) {
-                    $words = $arr;
-                }
-            }
-        }
-    ?>
+    <script>
+        window.phpWords = <?php echo isset($words) ? json_encode($words, JSON_UNESCAPED_UNICODE) : 'null'; ?>;
+        window.phpText = <?php echo isset($text) ? json_encode($text, JSON_UNESCAPED_UNICODE) : 'null'; ?>;
+        window.categoryBase = <?php echo json_encode(isset($category_base) ? $category_base : '/danh-muc/'); ?>;
+    </script>
+    <script src="/assets/js/physics-bg.js"></script>
+    <script src="/assets/js/home.js"></script>
     <script>
         (function() {
             var container = document.getElementById('wordcloud');
@@ -206,52 +168,6 @@
                 return String(str).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
             }
 
-            function drawBackground() {
-                var c = document.getElementById('physics-bg');
-                if (!c) return;
-                var dpr = window.devicePixelRatio || 1;
-                var w = window.innerWidth;
-                var h = window.innerHeight;
-                c.width = w * dpr;
-                c.height = h * dpr;
-                c.style.width = w + 'px';
-                c.style.height = h + 'px';
-                var ctx = c.getContext('2d');
-                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-                ctx.clearRect(0, 0, w, h);
-                var grd = ctx.createLinearGradient(0, 0, 0, h);
-                grd.addColorStop(0, '#ffffff');
-                grd.addColorStop(1, '#f7fafc');
-                ctx.fillStyle = grd;
-                ctx.fillRect(0, 0, w, h);
-                ctx.strokeStyle = 'rgba(0,0,0,0.06)';
-                ctx.lineWidth = 1;
-                var step = 40;
-                for (var x = 0; x < w; x += step) {
-                    ctx.beginPath();
-                    ctx.moveTo(x, 0);
-                    ctx.lineTo(x, h);
-                    ctx.stroke();
-                }
-                for (var y = 0; y < h; y += step) {
-                    ctx.beginPath();
-                    ctx.moveTo(0, y);
-                    ctx.lineTo(w, y);
-                    ctx.stroke();
-                }
-                var eq = ['E = mc²', 'F = ma', 'Δx·Δp ≥ ℏ/2', 'v = s/t', 'λ = c/f', 'a = dv/dt', '∫ F·ds', 'Σ F = 0'];
-                ctx.fillStyle = 'rgba(0,0,0,0.12)';
-                ctx.font = '700 28px STIX Two Text, Noto Sans, system-ui';
-                for (var i = 0; i < eq.length; i++) {
-                    var x0 = Math.random() * w;
-                    var y0 = Math.random() * h;
-                    ctx.save();
-                    ctx.translate(x0, y0);
-                    ctx.rotate((Math.random() - 0.5) * 0.2);
-                    ctx.fillText(eq[i], 0, 0);
-                    ctx.restore();
-                }
-            }
 
             function render() {
                 var width = container.clientWidth;
@@ -305,14 +221,9 @@
                     })
                 }).start()
             }
-            drawBackground();
             render();
-            var ro = new ResizeObserver(function() {
-                drawBackground();
-                render()
-            });
+            var ro = new ResizeObserver(function() { render() });
             ro.observe(container);
-            window.addEventListener('resize', drawBackground);
         })();
     </script>
 </body>

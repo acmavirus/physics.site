@@ -1,3 +1,9 @@
+jmnodes.theme-primary jmnode {
+    background-color: #ffffff !important;
+    color: #020202;
+    border-color: #e5e7eb ;
+}
+
 .controls {
   position: fixed;
   top: 20px;
@@ -100,6 +106,8 @@
 
 .mm-node.center { font-weight: 800; font-size: 22px; }
 .mm-node { font-size: 16px; }
+
+.mm-node .katex { color: inherit !important; }
 
 .mm-actions {
   margin-top: 8px;

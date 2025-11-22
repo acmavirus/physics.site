@@ -3,6 +3,7 @@
   var currentFormula = window.currentFormula || 'emc2';
   var formulaBase = window.formulaBase || '/cong-thuc/';
   var tooltip = null;
+  var layoutLock = false;
 
   function loadFormula(formulaName){
     if (formulaName === currentFormula) return;
@@ -42,18 +43,11 @@
     });
   }
 
-  function showTooltip(element, text){
-    if (!tooltip) tooltip = document.getElementById('tooltip');
-    tooltip.textContent = String(text||'');
-    tooltip.classList.add('show');
-    var rect = element.getBoundingClientRect();
-    tooltip.style.left = (rect.right + 10) + 'px';
-    tooltip.style.top = rect.top + 'px';
-  }
-
-  function hideTooltip(){ if (tooltip) tooltip.classList.remove('show'); }
+  
 
   function initializeMindmap(){
+    if (window.MindElixir){ renderWithMindElixir(); return; }
+    if (window.jsMind){ renderWithJsMind(); return; }
     var mapEl = document.getElementById('mindmap');
     var centerEl = document.getElementById('mm-center');
     Array.from(mapEl.querySelectorAll('.mm-node.child')).forEach(function(node){ node.remove(); });
@@ -67,12 +61,21 @@
   function renderCenterNode(){
     var centerEl = document.getElementById('mm-center');
     var centerLatexRaw = (mmConfig && mmConfig.centerLatex) ? mmConfig.centerLatex : 'E \\; = \\; mc^2';
-    try { katex.render(centerLatexRaw, centerEl, { throwOnError:false, displayMode:false }); }
+    var dynamicKeys = Object.keys((mmConfig && mmConfig.colors) || {});
+    var centerLatexWrapped = wrapCenterLatex(centerLatexRaw, dynamicKeys);
+    try { katex.render(centerLatexWrapped, centerEl, { throwOnError:false, displayMode:false, trust:true, strict:false }); }
     catch(e){
       centerEl.textContent = '';
       try { katex.render(centerLatexRaw, centerEl, { throwOnError:false, displayMode:false }); }
       catch(err){ centerEl.textContent = centerLatexRaw; }
     }
+    var colors = (mmConfig && mmConfig.colors) || {};
+    Object.keys(colors).forEach(function(k){
+      var el = centerEl.querySelector('.key-' + k);
+      if (el) {
+        el.style.color = colors[k];
+      }
+    });
     setTimeout(function(){ addCenterClickHandlers(); }, 500);
   }
 
@@ -84,12 +87,6 @@
       if (!el) return;
       el.style.cursor = 'pointer';
       el.addEventListener('click', function(){ toggleBranchGroup(k); });
-      el.addEventListener('mouseenter', function(){
-        var descriptions = { E:'Năng lượng - Đại lượng đặc trưng cho khả năng thực hiện công', m:'Khối lượng - Đại lượng đặc trưng cho lượng vật chất', c:'Tốc độ ánh sáng - Hằng số vật lý cơ bản', F:'Lực - Tác dụng làm thay đổi trạng thái chuyển động của vật', a:'Gia tốc - Tốc độ thay đổi của vận tốc' };
-        var d = descriptions[k] || '';
-        if (d) showTooltip(el, d);
-      });
-      el.addEventListener('mouseleave', hideTooltip);
     });
   }
 
@@ -100,17 +97,17 @@
       var key = keys[i];
       var tok = tokenForKey(key);
       if (!tok) continue;
-      if (tok.length === 1) {
-        continue;
-      }
       if (tok.charAt(0) === '\\'){
         var patternCmd = new RegExp(escapeRegex(tok), 'g');
         out = out.replace(patternCmd, function(m){ return '\\htmlClass{key-' + key + '}{' + m + '}'; });
       } else {
-        var patternWord = new RegExp('(^|[^\\a-zA-Z])(' + escapeRegex(tok) + ')(?=[^a-zA-Z]|$)', 'g');
-        out = out.replace(patternWord, function(_, prefix, word){
-          return (prefix || '') + '\\htmlClass{key-' + key + '}{' + word + '}';
-        });
+        if (tok.length === 1){
+          var patternSingle = new RegExp('(^|[\\s\\{\\(\-])(' + escapeRegex(tok) + ')(?=$|[\\s\\}\\)])', 'g');
+          out = out.replace(patternSingle, function(_, prefix, ch){ return (prefix || '') + '\\htmlClass{key-' + key + '}{' + ch + '}'; });
+        } else {
+          var patternWord = new RegExp('(^|[^\\a-zA-Z])(' + escapeRegex(tok) + ')(?=[^a-zA-Z]|$)', 'g');
+          out = out.replace(patternWord, function(_, prefix, word){ return (prefix || '') + '\\htmlClass{key-' + key + '}{' + word + '}'; });
+        }
       }
     }
     return out;
@@ -135,6 +132,7 @@
     var expanded = centerNode.getAttribute('data-expanded-' + key) === '1';
     var mapEl = document.getElementById('mindmap');
     if (expanded){
+      layoutLock = true;
       var nodesToRemove = Array.from(mapEl.querySelectorAll('.mm-node.child[data-parent-key="center"][data-group="' + key + '"]'));
       nodesToRemove.forEach(function(node, index){
         setTimeout(function(){
@@ -143,10 +141,12 @@
         }, index*50);
       });
       centerNode.setAttribute('data-expanded-' + key, '0');
-      setTimeout(function(){ layoutMindMap(); }, nodesToRemove.length*50 + 300);
+      setTimeout(function(){ layoutLock = false; layoutMindMap(); }, nodesToRemove.length*50 + 300);
       return;
     }
     var branch = mmConfig.groups[key];
+    layoutLock = true;
+    var colInit = ((mmConfig && mmConfig.colors) ? mmConfig.colors[key] : '#111');
     branch.forEach(function(item, index){
       setTimeout(function(){
         var n = document.createElement('div');
@@ -160,19 +160,21 @@
         try { katex.render(item.latex || item.text || '', inner, { throwOnError:false, displayMode:false }); }
         catch(e){ inner.textContent = item.text || item.latex || ''; }
         n.appendChild(inner);
+        n.style.borderColor = colInit;
+        n.style.color = colInit;
+        inner.style.color = colInit;
         mapEl.appendChild(n);
-        if (item.description){
-          n.addEventListener('mouseenter', function(){ showTooltip(n, item.description); });
-          n.addEventListener('mouseleave', hideTooltip);
-        }
+        
         setTimeout(function(){ n.classList.add('show'); }, 50);
       }, index*100);
     });
     centerNode.setAttribute('data-expanded-' + key, '1');
-    setTimeout(function(){ layoutMindMap(); }, branch.length*100 + 100);
+    setTimeout(function(){ layoutLock = false; layoutMindMap(); }, branch.length*100 + 120);
   }
 
   function layoutMindMap(){
+    if (layoutLock) return;
+    if (window.jsMind || window.MindElixir) return;
     var map = document.getElementById('mindmap');
     var center = document.getElementById('mm-center');
     var svg = document.getElementById('mm-links');
@@ -252,8 +254,143 @@
   window.searchFormulas = searchFormulas;
   window.initializeMindmap = initializeMindmap;
 
-  var ro = new ResizeObserver(function(){ layoutMindMap(); });
-  ro.observe(document.body);
+  var ro = new ResizeObserver(function(){ if (!layoutLock) layoutMindMap(); });
+  var mapEl = document.getElementById('mindmap');
+  if (mapEl) ro.observe(mapEl);
   window.addEventListener('resize', function(){ layoutMindMap(); });
   initializeMindmap();
+
+  function renderWithJsMind(){
+    var container = document.getElementById('mindmap');
+    if (!container) return;
+    container.innerHTML = '';
+    var options = {
+      container: 'mindmap',
+      editable: true,
+      theme: 'primary',
+      support_html: true,
+      view: { engine: 'canvas', line_style: 'curved' }
+    };
+    var jm = new jsMind(options);
+    window.__jm = jm;
+    var openedGroupsJM = {};
+    function toHTML(latex){
+      try { return katex.renderToString(String(latex||''), { throwOnError:false, displayMode:false, trust:true, strict:false }); }
+      catch(e){ return String(latex||''); }
+    }
+    var colors = (mmConfig && mmConfig.colors) || {};
+    var groups = (mmConfig && mmConfig.groups) || {};
+    var keysCenter = Object.keys(colors);
+    var centerRawJM = (mmConfig && mmConfig.centerLatex) ? mmConfig.centerLatex : 'E \\; = \\; mc^2';
+    var centerWrappedJM = wrapCenterLatex(centerRawJM, keysCenter);
+    var root = { id:'root', topic: toHTML(centerWrappedJM), children: [] };
+    // Chỉ hiển thị node gốc ban đầu
+    var mind = { meta: { name:'physic.site', version:'1.0' }, format:'node_tree', data: root };
+    jm.show(mind);
+    jm.set_editable(false);
+
+    // Gắn click vào các key trong node gốc để mở/đóng nhánh tương ứng
+    setTimeout(function(){
+      var rootEl = container.querySelector('.jsmind-node');
+      var keys = Object.keys(colors);
+      keys.forEach(function(k){
+        var anchors = container.querySelectorAll('.key-' + k);
+        anchors.forEach(function(el){
+          el.style.cursor = 'pointer';
+          el.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); toggleBranchJM(k); });
+          el.addEventListener('dblclick', function(e){ e.preventDefault(); e.stopPropagation(); });
+        });
+      });
+      container.addEventListener('dblclick', function(e){ e.preventDefault(); e.stopPropagation(); }, true);
+    }, 200);
+
+    function toggleBranchJM(k){
+      var col = colors[k] || '#111';
+      var grpId = 'grp-' + k;
+      if (openedGroupsJM[k]){
+        jm.set_editable(true);
+        // remove children then group
+        var arr = groups[k] || [];
+        for (var idx=0; idx<arr.length; idx++){
+          var cid = 'g-' + k + '-' + idx;
+          jm.remove_node(cid);
+        }
+        jm.remove_node(grpId);
+        jm.set_editable(false);
+        openedGroupsJM[k] = false;
+        return;
+      }
+      // create group node under root
+      jm.set_editable(true);
+      var okGrp = jm.add_node('root', grpId, toHTML(tokenForKey(k)), { 'foreground-color': col, 'line-color': col, 'leading-line-color': col });
+      if (!okGrp) { return; }
+      // create children
+      var arr2 = groups[k] || [];
+      for (var i=0; i<arr2.length; i++){
+        var cid2 = 'g-' + k + '-' + i;
+        var okChild = jm.add_node(grpId, cid2, toHTML(arr2[i].latex || arr2[i].text || ''), { 'foreground-color': col, 'line-color': col, 'leading-line-color': col });
+        if (!okChild) { /* skip if failed */ }
+      }
+      jm.set_editable(false);
+      openedGroupsJM[k] = true;
+    }
+  }
+  if (typeof renderWithJsMind === 'function') { window.renderWithJsMind = renderWithJsMind; }
+
+  function renderWithMindElixir(){
+    var container = document.getElementById('mindmap');
+    if (!container) return;
+    container.innerHTML = '';
+    if (!container.style.height) container.style.height = '520px';
+    var options = { el: '#mindmap', toolBar: false, nodeMenu: false, keypress: false, draggable: false, overflowHidden: false };
+    var me = new MindElixir(options);
+    window.__me = me;
+    function toHTML(latex){
+      try { return katex.renderToString(String(latex||''), { throwOnError:false, displayMode:false, trust:true, strict:false }); }
+      catch(e){ return String(latex||''); }
+    }
+    var colors = (mmConfig && mmConfig.colors) || {};
+    var groups = (mmConfig && mmConfig.groups) || {};
+    var keysCenter = Object.keys(colors);
+    var centerRaw = (mmConfig && mmConfig.centerLatex) ? mmConfig.centerLatex : 'E \\; = \\; mc^2';
+    var centerWrapped = wrapCenterLatex(centerRaw, keysCenter);
+    var data = { nodeData: { id: 'me-root', topic: '', dangerouslySetInnerHTML: toHTML(centerWrapped), expanded: true, children: [] } };
+    me.init(data);
+    function bindRootAnchors(){
+      keysCenter.forEach(function(k){
+        Array.from(container.querySelectorAll('.key-' + k)).forEach(function(el){
+          el.style.cursor = 'pointer';
+          el.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); toggleBranchME(k); });
+          el.addEventListener('dblclick', function(e){ e.preventDefault(); e.stopPropagation(); });
+        });
+      });
+      container.addEventListener('dblclick', function(e){ e.preventDefault(); e.stopPropagation(); }, true);
+    }
+    setTimeout(bindRootAnchors, 200);
+    var openedGroupsME = {};
+    function toggleBranchME(k){
+      var col = colors[k] || '#111';
+      var d = me.getData();
+      var root = d.nodeData;
+      var idx = (root.children||[]).findIndex(function(c){ return c && c.id === ('grp-'+k); });
+      if (idx >= 0){
+        root.children.splice(idx, 1);
+        openedGroupsME[k] = false;
+        me.refresh(d);
+        setTimeout(bindRootAnchors, 50);
+        return;
+      }
+      var grp = { id: 'grp-'+k, topic: '', dangerouslySetInnerHTML: toHTML(tokenForKey(k)), branchColor: col, expanded: true, children: [] };
+      var arr = groups[k] || [];
+      for (var i=0;i<arr.length;i++){
+        grp.children.push({ id: 'g-'+k+'-'+i, topic: '', dangerouslySetInnerHTML: toHTML(arr[i].latex || arr[i].text || ''), style: { color: col } });
+      }
+      root.children = root.children || [];
+      root.children.push(grp);
+      openedGroupsME[k] = true;
+      me.refresh(d);
+      setTimeout(bindRootAnchors, 50);
+    }
+  }
+  if (typeof renderWithMindElixir === 'function') { window.renderWithMindElixir = renderWithMindElixir; }
 })();

@@ -30,22 +30,9 @@ class Formula extends CI_Controller
             }
         }
 
-        $files = glob(APPPATH . 'data/mindmap/formula_mindmap_*.json');
-        $available = [];
-        foreach ($files as $f) {
-            $base = basename($f, '.json');
-            $slugItem = substr($base, strlen('formula_mindmap_'));
-            if ($slugItem) {
-                $available[] = [
-                    'slug' => $slugItem,
-                    'label' => $slugItem
-                ];
-            }
-        }
-
         $data['slug'] = $slug;
         $data['mmConfig'] = $cfg;
-        $data['availableFormulas'] = $available;
+
         $this->load->view('public/formula/index', $data);
     }
 }
